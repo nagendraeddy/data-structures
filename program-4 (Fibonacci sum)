@@ -1,0 +1,45 @@
+4.
+	Given a number n.  the task is to print the Fibonacci series and the sum of the series  using recursion.  
+
+input: n=10 
+output: Fibonacci series  
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+
+Sum: 88
+
+program:
+#include <stdio.h>
+int fibonacci(int n);
+int fibonacciSum(int n);
+int main() 
+{
+    int n = 10;
+    printf("Fibonacci series:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", fibonacci(i));
+    }
+    printf("\n\nSum: %d\n", fibonacciSum(n));
+    return 0;
+}
+int fibonacci(int n) 
+{
+    if (n <= 1) 
+    {
+        return n;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+int fibonacciSum(int n)
+{
+    int sum = 0;
+    for (int i = 0; i < n; i++) 
+    {
+        sum += fibonacci(i);
+    }
+    return sum;
+}
+
+output:
+Fibonacci series:
+0 1 1 2 3 5 8 13 21 34 
+Sum: 88
